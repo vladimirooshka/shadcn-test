@@ -6,7 +6,10 @@
 
 ```bash
 # 1. Создать приложение (Next.js + shadcn) в папке web/
-npx shadcn@latest init -t next -n web
+npx shadcn@latest init -t next -n web --no-monorepo
+
+# CLI создаёт внутри web/ свой git-репозиторий, он здесь не нужен
+rm -rf web/.git            # Windows cmd: rmdir /s /q web\.git
 
 # 2. Проверить, что всё собралось
 cd web && npm run dev
